@@ -56,19 +56,21 @@ AFRAME.registerComponent("markerhandler", {
       "saturday"
     ];
 
-
+    console.log(markerId);
     //Get the dish based on ID
     var dish = dishes.filter(dish => dish.id === markerId)[0];
-
+    console.log(dish);
+    console.log(dish.unavailable_days);
     //Update UI conent VISIBILITY of AR scene(MODEL , INGREDIENTS & PRICE)
-    var model = document.querySelector(`#model-${dish.id}`);
+    /*var model = document.querySelector(`#model-${dish.id}`);
+    console.log(model);
     model.setAttribute("visible", true);
 
     var ingredientsContainer = document.querySelector(`#main-plane-${dish.id}`);
     ingredientsContainer.setAttribute("visible", true);
 
     var priceplane = document.querySelector(`#price-plane-${dish.id}`);
-    priceplane.setAttribute("visible", true)
+    priceplane.setAttribute("visible", true)*/
 
     //Check if the dish is available 
     if (dish.unavailable_days.includes(days[todaysDay])) {
